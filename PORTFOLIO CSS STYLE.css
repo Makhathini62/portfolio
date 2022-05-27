@@ -276,7 +276,7 @@ section .button button:hover{
 
  /* My Skills CSS */
  .skills{
-   background: #F0F8FF;
+   background: #000000;
  }
  .skills .content{
    padding: 40px 0;
@@ -290,7 +290,7 @@ section .button button:hover{
    width: 50%;
  }
  .skills-details p{
-   color:#000000;
+   color:#fff;
    text-align: justify;
  }
 .skills .skills-details .experience{
@@ -299,11 +299,11 @@ section .button button:hover{
   margin: 0 10px;
 }
 .skills-details .experience .num{
-  color:#000000;
+  color:#fff;
   font-size: 80px;
 }
 .skills-details .experience .exp{
-  color:#000000;
+  color:#fff;
   margin-left: 20px;
   font-size: 18px;
   font-weight: 500;
@@ -314,6 +314,7 @@ section .button button:hover{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  color: #fefefe;
 }
  .skills-details .box{
   width: calc(100% / 2 - 20px);
