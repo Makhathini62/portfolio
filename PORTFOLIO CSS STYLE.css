@@ -276,7 +276,7 @@ section .button button:hover{
   color: rgb(43, 255, 0);
 }
 
- /* My Skills CSS */
+ /* My Skills CSS
  .skills{
    background: #000000;
  }
@@ -329,6 +329,60 @@ section .button button:hover{
 .skills-details .boxes .per{
   font-size: 60px;
   color:  rgb(30, 255, 0);
+} */
+
+/* My Skills CSS */
+.skills{
+  background: #000000;
+}
+.skills .content{
+  padding: 40px 0;
+}
+.skills .skills-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skills-details .text{
+  width: 50%;
+}
+.skills-details p{
+  color:#fff;
+  text-align: justify;
+}
+.skills .skills-details .experience{
+ display: flex;
+ align-items: center;
+ margin: 0 10px;
+}
+.skills-details .experience .num{
+ color:#fff;
+ font-size: 80px;
+}
+.skills-details .experience .exp{
+ color:#fff;
+ margin-left: 20px;
+ font-size: 18px;
+ font-weight: 500;
+ margin: 0 6px;
+}
+.skills-details .boxes{
+ width: 40%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+}
+.skills-details .box{
+ width: calc(100% / 2 - 20px);
+ margin: 20px 0; 
+} 
+.skills-details .boxes .topic{
+ font-size: 20px;
+ color:  green;
+}
+.skills-details .boxes .per{
+ font-size: 60px;
+ color:  green;
 }
 
 /* My Services CSS */
