@@ -6,6 +6,7 @@
   box-sizing: border-box;
   text-decoration: none;
   scroll-behavior: smooth;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 body{
@@ -136,7 +137,7 @@ nav.sticky .menu-btn{
 }
 .home .text-one{
   font-size: 75px;
-  color: rgb(8, 245, 40);
+  color: rgb(255, 255, 255);
 }
 .home .text-two{
     color:rgb(10, 245, 61);
@@ -160,12 +161,13 @@ nav.sticky .menu-btn{
 .home .text-three{
   font-size: 2.5rem;
   margin: 5px 0;
-  color: rgb(12, 236, 12);
+  color: rgb(12, 16, 236);
 }
 .home .text-four{
   font-size: 1.4375rem;
+  font-weight: bold;
   margin: 5px 0;
-  color:rgb(16, 241, 54);
+  color:rgb(19, 130, 233);
 }
 .home .button{
   margin: 14px 0;
@@ -276,7 +278,7 @@ section .button button:hover{
 
  /* My Skills CSS */
  .skills{
-   background: #F0F8FF;
+   background: #000000;
  }
  .skills .content{
    padding: 40px 0;
@@ -290,7 +292,7 @@ section .button button:hover{
    width: 50%;
  }
  .skills-details p{
-   color:#000000;
+   color:#fff;
    text-align: justify;
  }
 .skills .skills-details .experience{
@@ -299,11 +301,11 @@ section .button button:hover{
   margin: 0 10px;
 }
 .skills-details .experience .num{
-  color:#000000;
+  color:#fff;
   font-size: 80px;
 }
 .skills-details .experience .exp{
-  color:#000000;
+  color:#fff;
   margin-left: 20px;
   font-size: 18px;
   font-weight: 500;
@@ -314,6 +316,7 @@ section .button button:hover{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  color: #fefefe;
 }
  .skills-details .box{
   width: calc(100% / 2 - 20px);
