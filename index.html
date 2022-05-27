@@ -128,6 +128,57 @@
     </div>
    </section>
 
+   <!-- My Services Section Start -->
+ <section class="services" id="services">
+  <div class="content">
+    <div class="title"><span>My Services</span></div>
+    <div class="boxes">
+      <div class="box">
+        <div class="icon">
+          <i class="fas fa-desktop"></i>
+      </div>
+      <div class="topic">Web Devlopment</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+    </div>
+      <div class="box">
+        <div class="icon">
+          <i class="fas fa-paint-brush"></i>
+      </div>
+      <div class="topic">Graphic Design</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+    </div>
+      <div class="box">
+        <div class="icon">
+          <i class="fas fa-chart-line"></i>
+      </div>
+      <div class="topic">Digital Marketing</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+    </div>
+      <div class="box">
+        <div class="icon">
+          <i class="fab fa-android"></i>
+      </div>
+      <div class="topic">Teaching & facilitating</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+    </div>
+      <div class="box">
+        <div class="icon">
+          <i class="fas fa-camera-retro"></i>
+      </div>
+      <div class="topic">Claud Computing</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+    </div>
+      <div class="box">
+        <div class="icon">
+          <i class="fas fa-tablet-alt"></i>
+      </div>
+      <div class="topic">Wed Design</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia autem quam odio, qui voluptatem eligendi?</p>
+    </div>
+  </div>
+  </div>
+</section>
+
   <!-- <section id="contact">
   
     <h1 class="section-header">Contact</h1>
@@ -199,7 +250,7 @@
     
   </section>   -->
     
-  <section class="contact-us text-center">
+  <!-- <section class="contact-us text-center">
     <div class="fields">
       <div class="container">
         
@@ -238,9 +289,116 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+
+  <form method="post" id="frmContact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="firstname" id="firstname" required="required">
+              <span class="text">First Name</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="lastname" id="lastname" required="required">
+              <span class="text">Last Name</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="email" id="email" required="required">
+              <span class="text">Email</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="mobile" id="mobile" required="required">
+              <span class="text">Mobile</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox textarea">
+              <textarea required="required" name="message" id="message"></textarea>
+              <span class="text">Type your message Here...</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row100">
+          <div class="col">
+            <input name="submit" type="submit" value="Send">
+          </div>
+        </div>
+      </div>
+</form>
 
   <script src="https://kit.fontawesome.com/6d0c8023a1.js" crossorigin="anonymous"></script>
-  
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-database.js";
+     
+    // Paste the code from Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCwuKEgyqPewbGIgGX8GrZlNE7MIzLZ_Zo",
+      authDomain: "websitesim.firebaseapp.com",
+      databaseURL: "https://websitesim-default-rtdb.firebaseio.com",
+      projectId: "websitesim",
+      storageBucket: "websitesim.appspot.com",
+      messagingSenderId: "108117676496",
+      appId: "1:108117676496:web:5d43cb7d7b84394fc829d5",
+      measurementId: "G-JY2YKYMSX4"
+    };
+     
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+     
+    // Get a reference to the database service
+    const db = getDatabase(app);
+     
+    document.getElementById('frmContact').addEventListener('submit', function(e) {
+        e.preventDefault();
+        set(ref(db, 'welocome/' + Math.random().toString(36).slice(2, 7)), {
+            firstname: document.getElementById('firstname').value,
+            lastname: document.getElementById('lastname').value,
+            email: document.getElementById('email').value,
+            mobile: document.getElementById('mobile').value,
+            message: document.getElementById('message').value,
+        });
+     
+        alert('Your form is submitted');
+        document.getElementById('frmContact').reset();
+    });
+
+    // read data from firebase
+    const dbRef = ref(getDatabase(app));
+      get(child(dbRef, 'contactus/')).then((snapshot) => {
+    if (snapshot.exists()) {
+      Object.keys(snapshot.val()).forEach((key) => {
+          console.log(`First Name: ${snapshot.val()[key].firstname}`);
+          console.log(`Last Name: ${snapshot.val()[key].lastname}`);
+          console.log(`Mobile: ${snapshot.val()[key].mobile}`);
+          console.log(`Email: ${snapshot.val()[key].email}`);
+          console.log(`Message: ${snapshot.val()[key].message}`);
+      });
+    } else {
+      console.log("No data available");
+    }
+      }).catch((error) => {
+          console.error(error);
+    });
+</script>
 </body>
 </html>
